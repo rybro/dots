@@ -1,0 +1,17 @@
+[Added Associations]
+x-scheme-handler/http=exo-web-browser.desktop
+x-scheme-handler/https=exo-web-browser.desktop
+image/jpeg=viewnior.desktop;shutter.desktop;
+video/x-matroska=vlc.desktop;mpv.desktop;QMLPlayer.desktop;mplayer.desktop;
+text/plain=sublime-text.desktop;mousepad.desktop;
+application/octet-stream=sublime-text.desktop;
+video/mp4=vlc.desktop;
+audio/mpeg=clementine.desktop;lollypop.desktop;vlc.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-CPOMGY.desktop;
+message/rfc822=userapp-Thunderbird-CPOMGY.desktop;
+video/x-ms-wmv=vlc.desktop;QMLPlayer.desktop;
+
+[Default Applications]
+video/mp4=vlc.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-CPOMGY.desktop
+message/rfc822=userapp-Thunderbird-CPOMGY.desktop
