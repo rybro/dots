@@ -16,3 +16,8 @@ alias sb="source ~/.bashrc"
 alias gs='git status'
 alias tm='tmux'
 
+function acp() {
+    git add -A
+    git commit -a -m "$1"
+    git push -u origin master
+}
