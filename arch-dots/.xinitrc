@@ -11,6 +11,5 @@ sleep 10 &
 google-chrome-stable &
 discord &
 exaile &
-skype
 exec startxfce4
 
