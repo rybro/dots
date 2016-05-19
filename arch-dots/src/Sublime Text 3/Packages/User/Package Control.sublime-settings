@@ -1,0 +1,27 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Color Highlighter",
+		"DocBlockr",
+		"GitGutter",
+		"HTML5",
+		"jQuery",
+		"JSLint",
+		"Material Theme",
+		"Materialize",
+		"Package Control",
+		"Schemr",
+		"Seti_UI",
+		"SideBarEnhancements",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeLinter-html-tidy",
+		"SublimeLinter-jshint",
+		"SublimeLinter-ruby",
+		"Themr"
+	]
+}

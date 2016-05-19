@@ -15,7 +15,8 @@ alias we="curl --silent http://wttr.in/78602 | head -7"
 alias sb="source ~/.bashrc"
 alias gs='git status'
 alias tm='tmux'
-
+alias bs='browser-sync start --server --files "assets/css/*.css"'
+alias ..='cd ..'
 function acp() {
     git add -A
     git commit -a -m "$1"

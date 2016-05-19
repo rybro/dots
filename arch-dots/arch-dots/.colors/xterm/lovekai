@@ -1,0 +1,31 @@
+!# lovekai
+!*.foreground : #a0a0a0
+*.foreground : #FFFFFF
+*.background : #080808
+!*.background : #1b1d1e
+
+!black
+*.color0 :     #1b1d1e
+!*.color0 :     #080808
+*.color8 :     #505354
+!red
+*.color1 :     #ff2498
+*.color9 :     #ff5995
+!green
+*.color2 :     #82b414
+*.color10 :    #b6e354
+!yellow
+*.color3 :     #fd971f
+*.color11 :    #feed6c
+!blue
+*.color4 :     #56c2d6
+*.color12 :    #66d9ff
+!magenta
+*.color5 :     #8c54fe
+*.color13 :    #ae81ff
+!cyan
+*.color6 :     #465457
+*.color14 :    #899ca1
+!white
+*.color7 :     #ccccc6
+*.color15 :    #f8f8f2
