@@ -1,0 +1,27 @@
+{
+   "content_scripts": [ {
+      "js": [ "checkbans.js" ],
+      "matches": [ "*://steamcommunity.com/id/*/friends*", "*://steamcommunity.com/profiles/*/friends*", "*://steamcommunity.com/groups/*/members*" ],
+      "run_at": "document_end"
+   }, {
+      "js": [ "replaceurl.js" ],
+      "matches": [ "*://steamcommunity.com/groups/*" ],
+      "run_at": "document_end"
+   } ],
+   "description": "Automatically check bans of people you recently played with, your friends, and group members.",
+   "icons": {
+      "128": "ow128.png",
+      "16": "ow16.png",
+      "48": "ow48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsx3j2Ci1kPKp+CpssQVvYLgvhlgeLRVveUXnSMPgE3rn56UKj4AHC9b0KN1CMChvQy7CFI7t7YDaibbxu9jZ7bMZ5b5Hbr5VQHUWan37npeLCVVYcJ0JuyZcw9lBQt7deHrn0b6FZH7BJfcH1yJCvRoQhK+fuJLhzBs2cbRyp8sed4TfzQga7zhb8n+7fPfhVPPB02TttCEPJmLJlVAXE3+x3HjtfwuQZfwQzEClh3bMC7M0tMYx1b0GLKS1ndHke1AmAjO+MdytTWFE89ieVZTO/qpwRRjLRfNTG/nTTD9f4Y9YwUAWb/2SyiPYW2Dc8+xYy+9ijCq1jZJ5yDRYaQIDAQAB",
+   "manifest_version": 2,
+   "name": "Ban Checker for Steam",
+   "options_ui": {
+      "chrome_style": true,
+      "page": "setkey.html"
+   },
+   "permissions": [ "storage", "*://steamcommunity.com/*", "https://api.steampowered.com/*" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.6.2"
+}

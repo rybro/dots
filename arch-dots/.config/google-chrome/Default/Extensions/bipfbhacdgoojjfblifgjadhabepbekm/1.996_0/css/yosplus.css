@@ -1,0 +1,674 @@
+input.turbo[type="button"], input.empty[type="button"], input.showImages[type="button"]{
+	background-color: rgb(232, 232, 232);
+	border: 1px solid;
+	cursor: pointer;
+	height: 20px;
+	line-height: 13px;
+	font: 15px Courier New,monospace!important;
+	font-weight: bold!important;
+	vertical-align: top;
+	margin-top: 2px;
+    margin-left:10px;
+}
+
+input.sanQuickReplySubmit[type="button"]{
+cursor: pointer;
+width:100%;
+}
+
+#sanSmilieBox{
+    width: 28%;
+    height: 50%;
+    margin: 0 0 0 -20%;
+    left: 20%;
+    bottom: 0;
+    position: fixed;
+    z-index: 30;
+    border: 1px solid #57FF57;
+    padding: 15px;
+    padding-top: 10px;
+    background: #E8E8E8;
+    text-align: center;
+}
+
+button.sanBeecock{
+    /*float:right;*/
+    /*width:100px;*/
+    /*margin-top:1em;*/
+    margin-bottom:1em;
+}
+
+li.search_result .blurb{
+    margin-bottom:1em;
+}
+
+li.search_result{
+    border-bottom: 1px solid #7788A5;
+}
+
+#sanFavouriteSmilies{
+    width: 89%;
+    padding-top:10px;
+    padding-bottom: 10px;
+    border: 1px solid black;
+    margin-top: 30px;
+}
+
+
+#smilieSearch{
+    margin-bottom: 10px;
+}
+
+ul.smilieList li{
+    min-height: 75px;
+    list-style: none;
+    float: left;
+    width: 95px;
+    height: 80px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #dbdbdb;
+    margin: 4px 3px;
+    padding-left: 0px;
+    padding-right: 0px;
+    cursor:pointer;
+    color:black !important;
+}
+
+.emptyWarning {
+  animation: pulse 5s;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: black;
+  }
+  50% {
+    background-color: red;
+  }
+  100% {
+    background-color: black;
+  }
+}
+
+ul.postbuttons li img{
+    /*padding-top:0 !important;*/
+    vertical-align: top !important;
+    /*margin-top: 0px !important;*/
+}
+
+input.sanQuickReply[type="button"]{
+    background-color: rgb(232, 232, 232);
+    border: 1px solid;
+    cursor: pointer;
+    height: 20px;
+    line-height: 13px;
+    font: 15px Courier New,monospace!important;
+    font-weight: bold!important;
+    vertical-align: top;
+    margin-top: 0px;
+    margin-left:10px;
+}
+
+.top > ul.postbuttons > li > input.turbo[type="button"]{
+    margin-top: 0;
+}
+
+.bottom > ul.postbuttons > li > input.sanQuickReply[type="button"]{
+    margin-top: 2px;
+}
+
+.newreply #content table.standard .post-wrapper textarea.hover, textarea.hover {
+  font-size: 13px;
+ background-color: rgba(87, 255, 87, 0.25);
+}
+
+#sanQuickReplyButtons{
+/*position:absolute;*/
+width:10%;
+margin: 0 0 0 45%;
+padding-bottom: 10px;
+}
+
+#sanQuickReply{
+/*margin: 0 auto;
+width: 400px;*/
+/*width:60%;
+
+
+margin: 0 0 0 -30%;
+left:50%;
+bottom:0;*/
+
+border:10px solid yellow;
+
+/*height:100%;
+width:100%;
+position: fixed;
+z-index: 30;
+display: none;*/
+}
+
+#closeQuickReply{
+    position: absolute;
+  right: 2%;
+  cursor:pointer;
+  z-index: 40;
+  color: red;
+}
+
+#sanQuickReplyContainer{
+/*margin: 0 auto;
+width: 400px;*/
+width:40%;
+margin: 0 0 0 -20%;
+left:50%;
+bottom:0;
+position: fixed;
+z-index: 30;
+padding: 15px;
+padding-top:10px;
+cursor:move;
+border: 1px solid black;
+}
+
+#sanQuickReplyContainer{
+background-color: rgb(232, 232, 232);
+}
+
+#sanQuickReplyText{
+    width:100%;
+    margin: 0; padding: 0; border-width: 0;
+    height:85%;
+    border: 1px solid black;
+}
+
+#holder {
+  border: 10px dashed #ccc;
+  width: 300px;
+  height: 300px;
+  margin: 20px auto;
+}
+
+#holder.hover { border: 10px dashed #333; }
+
+tr.section{
+    cursor: pointer;
+}
+
+#thread li.alertbutton {
+  margin-right: -14px;
+}
+
+video.san{
+    max-width:50%;
+}
+
+#loading{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#error{
+    color:red;
+}
+
+#loadingSpinnerQuick{
+    position: absolute;
+    left: 40%;
+}
+
+input.turbo.meMain[type="button"] {
+	color: #AAA;
+}
+
+input.empty.meMain[type="button"] {
+	color: #111;
+	margin-top: 0px !important;
+}
+
+.post.unseen{
+    background-color: rgba(87, 255, 87, 0.32) !important;
+        transition: background-color .25s ease-in-out;
+    -moz-transition: background-color .25s ease-in-out;
+    -webkit-transition: background-color .25s ease-in-out;
+
+}
+
+.post.seen{
+    background-color: black !important;
+}
+
+#testDrag{
+    border:5px dotted green;
+    height:390px;
+    width:640px;
+    position: fixed;
+    top: 60px;
+    right:10px;
+            /*padding:25px;*/
+            /*z-index: 400;*/
+            display:none;
+}
+
+#header{
+    position:fixed;
+    width:100%;
+    height:50px;
+    background-color: black;
+    border-bottom: 1px solid #57FF57;
+    display: none;
+    z-index: 50;
+    color:#57FF57;
+    font-size:14px;
+    padding-left:25px;
+    padding-top: 10px;
+    font-family: "consolas","monaco",monospace!important;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default{
+    background:none;
+    background-color:#EACF4C;
+}
+
+#container.turboC{
+    padding-top: 61px;
+}
+
+#slider-vertical{
+    position:absolute;
+    background-color:white;
+    margin-left:25px;
+    margin-top:100px;
+    opacity:0.3;
+}
+
+#slider-vertical .ui-slider-range { background: #57FF57; border-color:#57FF57;}
+#slider-vertical .ui-slider-handle { border-color: #EACF4C; }
+
+.ui-resizable-helper { border: 2px dotted #57FF57; }
+
+#hiddenContainer{
+    width:100%;
+    height:100%;
+    position:absolute;
+    display:none;
+    /*background-color: red !important;*/
+    /*z-index: 500;*/
+}
+
+i.fa-arrows{
+    opacity:0.5;
+    position:absolute;
+    color:#57FF57;
+    cursor: move;
+    padding-left:5px;
+}
+
+.ui-resizable-handle {
+    width: 10px;
+    height: 10px;
+    border:1px solid black;
+}
+.ui-resizable-n, .ui-resizable-s {
+    left:50%;
+}
+.ui-resizable-e, .ui-resizable-w {
+     top:50%;    
+}
+
+.ui-resizable-se
+{
+    right: -5px;
+    bottom: -5px;
+}
+
+#ytplayer{
+    /*position:absolute;*/
+    /*z-index: -1;*/
+    width: 100%;
+    height: 100%;
+
+}
+
+.videowrapper iframe {
+
+}
+
+hy{
+  color:red;
+  font-size:32px;
+  text-align:center!important;
+}
+
+.bbc-spoiler video {
+visibility: hidden;
+}
+
+.bbc-spoiler.reveal video {
+visibility: visible;
+}
+
+/*.meMain blockquote {
+color: #AAA !important;
+font-weight: bold;
+}
+
+.meMain a {
+color: #AAA !important;
+font-weight: bold;
+}
+
+.meMain.bbc-block{
+	background: #000 !important;
+}*/
+
+/*.userquoted blockquote {
+color: #AAA !important;
+font-weight: bold;
+}
+
+.userquoted a {
+color: #AAA !important;
+font-weight: bold;
+}
+
+.userquoted.bbc-block{
+    background: #000 !important;
+}*/
+
+
+
+/*@-webkit-keyframes animesAmber{0%{background:#EACF4C;color:#000}50%{background:#000;color:#EACF4C}100%{background:#EACF4C;color:#000}}
+
+@-webkit-keyframes animesGreen{0%{background:#57FF57;color:#000}50%{background:#000;color:#57FF57}100%{background:#57FF57;color:#000}}*/
+
+.jumbotron {
+    padding: 30px;
+    margin-bottom: 30px;
+    color: #eee;
+    background-color: #eee;
+}
+.jumbotron h1, .jumbotron .h1 {
+    color: inherit;
+}
+.jumbotron p {
+    margin-bottom: 15px;
+    font-size: 21px;
+    font-weight: 200;
+}
+.jumbotron>hr {
+    border-top-color: #d5d5d5;
+}
+.container .jumbotron {
+    border-radius: 6px;
+}
+.jumbotron .container {
+    max-width: 100%}
+
+.jumbotron {
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+.container .jumbotron {
+    padding-right: 60px;
+    padding-left: 60px;
+}
+.jumbotron h1, .jumbotron .h1 {
+    font-size: 63px;
+}
+
+.forum_219 img[title=":getin:"] {
+    height: 0;
+    width:62px;
+    overflow: hidden;
+    padding-bottom: 25px;
+    background: url("http://i.imgur.com/2nfEAN2.gif")
+}
+.forum_219 img[title=":iiapa:"] {
+    height: 0;
+    width:65px;
+    overflow: hidden;
+    padding-bottom: 22px;
+    background: url("http://i.imgur.com/KTHJSFj.png")
+}
+.forum_219 img[title=":firstpost:"] {
+    height: 0;
+    width:45px;
+    overflow: hidden;
+    padding-bottom: 15px;
+    background: url("http://i.imgur.com/KM8lmCl.gif")
+}
+.forum_219 img[title=":hf:"] {
+    height: 0;
+    width:8px;
+    overflow: hidden;
+    padding-bottom: 15px;
+    background: url("http://i.imgur.com/sgP87yh.gif")
+}
+.forum_219 img[title=":tbear:"] {
+    height: 0;
+    width:65px;
+    overflow: hidden;
+    padding-bottom: 15px;
+    background: url("http://i.imgur.com/JNgEYHU.gif")
+}
+.forum_219 img[title=":witch:"] {
+    height: 0;
+    width:21px;
+    overflow: hidden;
+    padding-bottom: 22px;
+    background: url("http://i.imgur.com/GUsiFAO.gif")
+}
+
+.forum_219 img[title=":s:"] {
+    height: 0;
+    width:13px;
+    overflow: hidden;
+    padding-bottom: 11px;
+    background: url("http://i.imgur.com/siTl88X.png")
+}
+
+.forum_219 img[title=":iiam:"] {
+    height: 0;
+    width:65px;
+    overflow: hidden;
+    padding-bottom: 22px;
+    background: url("http://i.imgur.com/h5W2dQD.gif")
+}
+
+.forum_219 img[title=":iiaca:"] {
+    height: 0;
+    width:65px;
+    overflow: hidden;
+    padding-bottom: 22px;
+    background: url("http://i.imgur.com/lZusblD.gif")
+}
+
+.forum_219 img[title=":ms:"] {
+    height: 0;
+    width:65px;
+    overflow: hidden;
+    padding-bottom: 22px;
+    background: url("http://i.imgur.com/XFA4tSd.gif")
+}
+
+.forum_219 img[title=":whoptc:"] {
+    height: 0;
+    width:58px;
+    overflow: hidden;
+    padding-bottom: 25px;
+    background: url("http://i.imgur.com/noEO7Nh.gif")
+}
+
+.forum_219 img[title=":shrug:"] {
+    height: 0;
+    width:37px;
+    overflow: hidden;
+    padding-bottom: 15px;
+    background: url("http://i.imgur.com/GSmwUvD.gif")
+}
+
+.forum_219 img[title=":qq:"] {
+    height: 0;
+    width:20px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    background: url("http://i.imgur.com/eFnaedj.gif")
+}
+
+.forum_219 img[title=":nyoron:"] {
+    height: 0;
+    width:56px;
+    overflow: hidden;
+    padding-bottom: 24px;
+    background: url("http://i.imgur.com/OqCYNmy.gif")
+}
+
+.forum_219 img[title=":confused:"] {
+    height: 0;
+    width:15px;
+    overflow: hidden;
+    padding-bottom: 22px;
+    background: url("http://i.imgur.com/cDs3iYp.gif")
+}
+
+.forum_219 img[title=":choco:"] {
+    height: 0;
+    width:52px;
+    overflow: hidden;
+    padding-bottom: 17px;
+    background: url("http://i.imgur.com/G8Z8PJt.gif")
+}
+
+.forum_219 img[title=":tipshat:"] {
+    height: 0;
+    width:25px;
+    overflow: hidden;
+    padding-bottom: 28px;
+    background: url("http://i.imgur.com/crSywHl.gif")
+}
+
+.forum_219 img[title=":iia:"] {
+    height: 0;
+    width:65px;
+    overflow: hidden;
+    padding-bottom: 22px;
+    background: url("http://i.imgur.com/PbbqtDO.gif")
+}
+
+.forum_219 img[title=":30bux:"] {
+    height: 0;
+    width:12px;
+    overflow: hidden;
+    padding-bottom: 27px;
+    background: url("http://i.imgur.com/7UdPQCs.gif")
+}
+
+.forum_219 img[title=":worship:"] {
+    height: 0;
+    width:26px;
+    overflow: hidden;
+    padding-bottom: 24px;
+    background: url("http://i.imgur.com/dH3shcN.gif")
+}
+
+.forum_219 img[title=":wtc:"] {
+    height: 0;
+    width:58px;
+    overflow: hidden;
+    padding-bottom: 25px;
+    background: url("http://i.imgur.com/370140M.gif")
+}
+
+.forum_219 img[title=":woop:"] {
+    height: 0;
+    width:25px;
+    overflow: hidden;
+    padding-bottom: 22px;
+    background: url("http://i.imgur.com/UspzmyO.gif")
+}
+
+.forum_219 img[title=":frogon:"] {
+    height: 0;
+    width:73px;
+    overflow: hidden;
+    padding-bottom: 25px;
+    background: url("http://i.imgur.com/AShruBE.gif")
+}
+
+.forum_219 img[title=":3:"] {
+    height: 0;
+    width:15px;
+    overflow: hidden;
+    padding-bottom: 18px;
+    background: url("http://i.imgur.com/AxylWBa.gif")
+}
+
+.forum_219 img[title=":milk:"] {
+    height: 0;
+    width:70px;
+    overflow: hidden;
+    padding-bottom: 25px;
+    background: url("http://i.imgur.com/v9rJwcT.gif")
+}
+
+.forum_219 img[title=":synpa:"] {
+    height: 0;
+    width:72px;
+    overflow: hidden;
+    padding-bottom: 25px;
+    background: url("http://i.imgur.com/n3zuJgQ.gif")
+}
+
+.forum_219 img[title=":wtf:"] {
+    height: 0;
+    width:35px;
+    overflow: hidden;
+    padding-bottom: 15px;
+    background: url("http://i.imgur.com/ibTP6SZ.gif")
+}
+
+.forum_219 img[title=":woof:"] {
+    height: 0;
+    width:52px;
+    overflow: hidden;
+    padding-bottom: 25px;
+    background: url("http://i.imgur.com/MgLmkLf.gif")
+}
+
+.forum_219 img[title=":derp:"] {
+    height: 0;
+    width:50px;
+    overflow: hidden;
+    padding-bottom: 25px;
+    background: url("http://i.imgur.com/LNBoZXh.gif")
+}
+
+.forum_219 img[title=":nws:"] {
+    height: 0;
+    width:44px;
+    overflow: hidden;
+    padding-bottom: 14px;
+    background: url("http://i.imgur.com/ZGsOWvr.gif")
+}
+
+.forum_219 img[title=":phoneline:"] {
+    height: 0;
+    width:99px;
+    overflow: hidden;
+    padding-bottom: 19px;
+    background: url("http://i.imgur.com/PKQlKx5.gif")
+}
+
+.forum_219 img[title=":cumpolice:"] {
+    height: 0;
+    width:125px;
+    overflow: hidden;
+    padding-bottom: 25px;
+    background: url("http://i.imgur.com/JJQ0qNk.gif")
+}
+
+span.highlight{
+font-weight: 900;
+}

@@ -1,0 +1,10 @@
+{
+   "appDescription": {
+      "description": "The description of the application",
+      "message": "A Chrome Extension to make SoundCloud better"
+   },
+   "appName": {
+      "description": "The name of the application",
+      "message": "SoundCloud Enhancer"
+   }
+}

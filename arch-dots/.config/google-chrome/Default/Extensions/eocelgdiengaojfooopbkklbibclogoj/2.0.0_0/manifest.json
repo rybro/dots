@@ -1,0 +1,22 @@
+{
+   "background": {
+      "persistent": false,
+      "scripts": [ "background.js" ]
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "youtube.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_end"
+   } ],
+   "description": "Show the titles of blind-linked YouTube™ videos",
+   "icons": {
+      "48": "youtube.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC7gBccWWZvXily8VzQNgCq2y2yyPena1GEfZGb5ptaQvYhizhdrdopkk7DDHlaT/WPQo2vhJ5naA4s9hgEcvb5Mthqwt5WUchnFUme5zkKwuD+kiH3qLeIumTX2KEB58rZMsXWFLyqlsB83sBcI1WUO0DjpRxCy55UwdjeE5kylwIDAQAB",
+   "manifest_version": 2,
+   "name": "Expose Untitled YouTube™ Links",
+   "permissions": [ "https://www.googleapis.com/youtube/v3/*" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.0.0"
+}

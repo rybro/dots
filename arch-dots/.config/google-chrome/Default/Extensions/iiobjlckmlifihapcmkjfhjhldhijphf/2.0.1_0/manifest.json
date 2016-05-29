@@ -1,0 +1,33 @@
+{
+   "background": {
+      "persistent": true,
+      "scripts": [ "scripts/chromereload.js", "scripts/background.js" ]
+   },
+   "content_scripts": [ {
+      "css": [ "styles/main.css", "styles/iosbutton.css" ],
+      "js": [ "scripts/popup.js", "scripts/jquery.2.1.3-min.js", "scripts/underscore-min.js" ],
+      "matches": [ "https://soundcloud.com/*" ],
+      "run_at": "document_end"
+   } ],
+   "default_locale": "en",
+   "description": "De-clutter your SoundCloud Stream",
+   "icons": {
+      "128": "images/soundshroud.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA28fo82UYbyGk4Mo/jO/E8pYdwEyhPc29qXuYr7T3p3b/IJMpgPzrb8OACcKD9Ff3iedUuZbw7pjH0FlBafQhYH0m7jFOwUaW99MpK+glL8a9aqoR1+D1MVEDOJMUGn05WsBF/HrdURoArOzaj1BTQ1ds3gPadiu/++RY4+JmT0saM5yPwKxOBLNJ0atIwIf7MXjpISbAX6QCPjVn5Yrrs1zeAdCQHl9lUGAvu0Oms3OVOeozov1PfWtWST4X4DeKBtO1gehnMHvYZY1yj1MbRQz3RxhIQ09ItuI888j17Ft205rR8AXcncfjeEQiQXjNLhSHcoQgXTNlTXexlkpnewIDAQAB",
+   "manifest_version": 2,
+   "name": "SoundShroud",
+   "page_action": {
+      "default_icon": {
+         "19": "images/soundshroud.png",
+         "38": "images/soundshroud.png"
+      },
+      "default_popup": "popup.html",
+      "default_title": "SoundShroud",
+      "matches": [ "https://soundcloud.com/*" ]
+   },
+   "permissions": [ "storage", "https://script.google.com/macros/s/AKfycbyCUDY1dT3WtEhiqJ0t8k5AzCk2akxMPZkfQmYm2IoFz5-DZ1zv/exec" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.0.1",
+   "web_accessible_resources": [ "images/soundshroud.png", "images/facebook.png", "images/twitter.png" ]
+}

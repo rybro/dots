@@ -25,8 +25,13 @@
     fontFamily: "Cantarell"
     invisibles: {}
     showIndentGuide: true
+    softWrap: true
     tabLength: 4
   "exception-reporting":
     userId: "169718cb-2f71-4f60-684d-f4ece219401f"
+  linter: {}
+  minimap:
+    absoluteMode: true
+    displayCodeHighlights: false
   welcome:
     showOnStartup: false

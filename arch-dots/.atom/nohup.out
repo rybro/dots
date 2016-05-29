@@ -1,3 +1,2 @@
-App load time: 1094ms
-(electron) app.getDataPath is deprecated. Use app.getPath instead.
+App load time: 1086ms
 /bin/sh: coffee: command not found
