@@ -29,6 +29,8 @@
   'ctrl-;': 'editor:move-to-end-of-screen-line'
   'ctrl-l': 'editor:move-to-end-of-word'
   'ctrl-j': 'editor:move-to-beginning-of-word'
+'.platform-win32 atom-text-editor, .platform-linux atom-text-editor':
+  'ctrl-shift-f': 'find-and-replace:select-all'
 'body':
   'ctrl-i': 'core:move-up'
   'ctrl-k': 'core:move-down'

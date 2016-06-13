@@ -39,7 +39,7 @@ class ColorMarkerElement extends HTMLElement
       if isValid then @bufferElement.requestMarkerUpdate([this]) else @release()
 
     @subscriptions.add atom.config.observe 'pigments.markerType', (type) =>
-      @bufferElement.requestMarkerUpdate([this]) unless type is 'gutter'
+      @bufferElement.requestMarkerUpdate([this]) unless @bufferElement.useNativeDecorations()
 
     @subscriptions.add @subscribeTo this,
       click: (e) =>
@@ -61,7 +61,7 @@ class ColorMarkerElement extends HTMLElement
 
     {colorMarker, renderer, bufferElement} = this
 
-    return if colorMarker.marker.displayBuffer.isDestroyed()
+    return if bufferElement.editor.isDestroyed()
     @innerHTML = ''
     {style, regions, class: cls} = renderer.render(colorMarker)
 
@@ -109,6 +109,19 @@ module.exports =
 ColorMarkerElement =
 registerOrUpdateElement 'pigments-color-marker', ColorMarkerElement.prototype
 
+ColorMarkerElement.isNativeDecorationType = (type) ->
+  type in [
+    'gutter'
+    'native-background'
+    'native-outline'
+    'native-underline'
+    'native-dot'
+    'native-square-dot'
+  ]
+
 ColorMarkerElement.setMarkerType = (markerType) ->
-  return if markerType is 'gutter'
+  return if ColorMarkerElement.isNativeDecorationType(markerType)
+  return unless RENDERERS[markerType]?
+
+  @prototype.rendererType = markerType
   @prototype.renderer = new RENDERERS[markerType]

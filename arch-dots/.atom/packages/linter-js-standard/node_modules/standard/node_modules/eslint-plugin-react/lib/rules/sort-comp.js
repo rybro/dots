@@ -6,8 +6,7 @@
 
 var util = require('util');
 
-var componentUtil = require('../util/component');
-var ComponentList = componentUtil.List;
+var Components = require('../util/Components');
 
 /**
  * Get the methods order from the default config and the user config
@@ -39,12 +38,11 @@ function getMethodsOrder(defaultConfig, userConfig) {
 // Rule Definition
 // ------------------------------------------------------------------------------
 
-module.exports = function(context) {
+module.exports = Components.detect(function(context, components) {
 
-  var componentList = new ComponentList();
   var errors = {};
 
-  var MISPOSITION_MESSAGE = '{{propA}} must be placed {{position}} {{propB}}';
+  var MISPOSITION_MESSAGE = '{{propA}} should be placed {{position}} {{propB}}';
 
   var methodsOrder = getMethodsOrder({
     order: [
@@ -63,6 +61,7 @@ module.exports = function(context) {
         'defaultProps',
         'constructor',
         'getDefaultProps',
+        'state',
         'getInitialState',
         'getChildContext',
         'componentWillMount',
@@ -75,19 +74,6 @@ module.exports = function(context) {
       ]
     }
   }, context.options[0]);
-
-  /**
-   * Checks if the component must be validated
-   * @param {Object} component The component to process
-   * @returns {Boolean} True if the component must be validated, false if not.
-   */
-  function mustBeValidated(component) {
-    return (
-      component &&
-      component.isReactComponent &&
-      !component.hasDisplayName
-    );
-  }
 
   // --------------------------------------------------------------------------
   // Public
@@ -146,7 +132,7 @@ module.exports = function(context) {
     // (babel-eslint does not expose property name so we have to rely on tokens)
     if (node.type === 'ClassProperty') {
       var tokens = context.getFirstTokens(node, 2);
-      return tokens[1].type === 'Identifier' ? tokens[1].value : tokens[0].value;
+      return tokens[1] && tokens[1].type === 'Identifier' ? tokens[1].value : tokens[0].value;
     }
 
     return node.key.name;
@@ -238,10 +224,14 @@ module.exports = function(context) {
    * @returns {Array} Properties array.
    */
   function getComponentProperties(node) {
-    if (node.type === 'ClassDeclaration') {
-      return node.body.body;
+    switch (node.type) {
+      case 'ClassDeclaration':
+        return node.body.body;
+      case 'ObjectExpression':
+        return node.properties;
+      default:
+        return [];
     }
-    return node.properties;
   }
 
   /**
@@ -346,10 +336,9 @@ module.exports = function(context) {
 
   return {
     'Program:exit': function() {
-      var list = componentList.getList();
-
+      var list = components.list();
       for (var component in list) {
-        if (!list.hasOwnProperty(component) || !mustBeValidated(list[component])) {
+        if (!list.hasOwnProperty(component)) {
           continue;
         }
         var properties = getComponentProperties(list[component].node);
@@ -357,19 +346,10 @@ module.exports = function(context) {
       }
 
       reportErrors();
-    },
-
-    ReturnStatement: function(node) {
-      if (!componentUtil.isReactComponent(context, node)) {
-        return;
-      }
-      componentList.set(context, node, {
-        isReactComponent: true
-      });
     }
   };
 
-};
+});
 
 module.exports.schema = [{
   type: 'object',

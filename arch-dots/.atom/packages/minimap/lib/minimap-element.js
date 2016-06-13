@@ -264,6 +264,12 @@ export default class MinimapElement {
         if (this.attached) { this.measureHeightAndWidth() }
       },
 
+      'minimap.adjustMinimapWidthOnlyIfSmaller': (adjustOnlyIfSmaller) => {
+        this.adjustOnlyIfSmaller = adjustOnlyIfSmaller
+
+        if (this.attached) { this.measureHeightAndWidth() }
+      },
+
       'minimap.useHardwareAcceleration': (useHardwareAcceleration) => {
         this.useHardwareAcceleration = useHardwareAcceleration
 
@@ -316,6 +322,10 @@ export default class MinimapElement {
     this.attached = true
     this.attachedToTextEditor = this.parentNode === this.getTextEditorElementRoot()
 
+    if (this.attachedToTextEditor) {
+      this.getTextEditorElement().setAttribute('with-minimap', '')
+    }
+
     /*
       We use `atom.styles.onDidAddStyleElement` instead of
       `atom.themes.onDidChangeActiveThemes`.
@@ -336,6 +346,7 @@ export default class MinimapElement {
    * @access private
    */
   detachedCallback () {
+    this.getTextEditorElement().removeAttribute('with-minimap')
     this.attached = false
   }
 
@@ -759,14 +770,14 @@ export default class MinimapElement {
    */
   update () {
     if (!(this.attached && this.isVisible() && this.minimap)) { return }
-    let minimap = this.minimap
+    const minimap = this.minimap
     minimap.enableCache()
-    let canvas = this.getFrontCanvas()
+    const canvas = this.getFrontCanvas()
 
     const devicePixelRatio = this.minimap.getDevicePixelRatio()
-    let visibleAreaLeft = minimap.getTextEditorScaledScrollLeft()
-    let visibleAreaTop = minimap.getTextEditorScaledScrollTop() - minimap.getScrollTop()
-    let visibleWidth = Math.min(canvas.width / devicePixelRatio, this.width)
+    const visibleAreaLeft = minimap.getTextEditorScaledScrollLeft()
+    const visibleAreaTop = minimap.getTextEditorScaledScrollTop() - minimap.getScrollTop()
+    const visibleWidth = Math.min(canvas.width / devicePixelRatio, this.width)
 
     if (this.adjustToSoftWrap && this.flexBasis) {
       this.style.flexBasis = this.flexBasis + 'px'
@@ -781,13 +792,14 @@ export default class MinimapElement {
         width: visibleWidth + 'px',
         height: minimap.getTextEditorScaledHeight() + 'px',
         top: visibleAreaTop + 'px',
-        left: visibleAreaLeft + 'px'
+        'border-left-width': visibleAreaLeft + 'px'
       })
     } else {
       this.applyStyles(this.visibleArea, {
         width: visibleWidth + 'px',
         height: minimap.getTextEditorScaledHeight() + 'px',
-        transform: this.makeTranslate(visibleAreaLeft, visibleAreaTop)
+        transform: this.makeTranslate(0, visibleAreaTop),
+        'border-left-width': visibleAreaLeft + 'px'
       })
     }
 
@@ -795,21 +807,25 @@ export default class MinimapElement {
 
     let canvasTop = minimap.getFirstVisibleScreenRow() * minimap.getLineHeight() - minimap.getScrollTop()
 
-    let canvasTransform = this.makeTranslate(0, canvasTop)
-    if (devicePixelRatio !== 1) {
-      canvasTransform += ' ' + this.makeScale(1 / devicePixelRatio)
-    }
-
     if (this.smoothScrolling) {
       if (SPEC_MODE) {
         this.applyStyles(this.backLayer.canvas, {top: canvasTop + 'px'})
         this.applyStyles(this.tokensLayer.canvas, {top: canvasTop + 'px'})
         this.applyStyles(this.frontLayer.canvas, {top: canvasTop + 'px'})
       } else {
+        let canvasTransform = this.makeTranslate(0, canvasTop)
+        if (devicePixelRatio !== 1) {
+          canvasTransform += ' ' + this.makeScale(1 / devicePixelRatio)
+        }
         this.applyStyles(this.backLayer.canvas, {transform: canvasTransform})
         this.applyStyles(this.tokensLayer.canvas, {transform: canvasTransform})
         this.applyStyles(this.frontLayer.canvas, {transform: canvasTransform})
       }
+    } else {
+      const canvasTransform = this.makeScale(1 / devicePixelRatio)
+      this.applyStyles(this.backLayer.canvas, {transform: canvasTransform})
+      this.applyStyles(this.tokensLayer.canvas, {transform: canvasTransform})
+      this.applyStyles(this.frontLayer.canvas, {transform: canvasTransform})
     }
 
     if (this.minimapScrollIndicator && minimap.canScroll() && !this.scrollIndicator) {
@@ -930,7 +946,7 @@ export default class MinimapElement {
         let softWrapAtPreferredLineLength = atom.config.get('editor.softWrapAtPreferredLineLength')
         let width = lineLength * this.minimap.getCharWidth()
 
-        if (softWrap && softWrapAtPreferredLineLength && lineLength && width <= this.width) {
+        if (softWrap && softWrapAtPreferredLineLength && lineLength && (width <= this.width || !this.adjustOnlyIfSmaller)) {
           this.flexBasis = width
           canvasWidth = width
         } else {
@@ -1016,15 +1032,17 @@ export default class MinimapElement {
     const row = Math.floor(deltaY / this.minimap.getLineHeight()) + this.minimap.getFirstVisibleScreenRow()
 
     const textEditor = this.minimap.getTextEditor()
+    const textEditorElement = this.getTextEditorElement()
 
     const scrollTop = row * textEditor.getLineHeightInPixels() - this.minimap.getTextEditorHeight() / 2
+    const textEditorScrollTop = textEditorElement.pixelPositionForScreenPosition([row, 0]).top - this.minimap.getTextEditorHeight() / 2
 
     if (atom.config.get('minimap.scrollAnimation')) {
       const duration = atom.config.get('minimap.scrollAnimationDuration')
       const independentScroll = this.minimap.scrollIndependentlyOnMouseWheel()
 
       let from = this.minimap.getTextEditorScrollTop()
-      let to = scrollTop
+      let to = textEditorScrollTop
       let step
 
       if (independentScroll) {
@@ -1041,7 +1059,7 @@ export default class MinimapElement {
         this.animate({from: from, to: to, duration: duration, step: step})
       }
     } else {
-      this.minimap.setTextEditorScrollTop(scrollTop)
+      this.minimap.setTextEditorScrollTop(textEditorScrollTop)
     }
   }
 

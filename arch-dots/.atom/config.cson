@@ -17,12 +17,13 @@
     ]
     projectHome: "/home/ryan/Projects/"
     themes: [
-      "atom-material-ui"
-      "atom-material-syntax"
+      "seti-ui"
+      "monokai-seti"
     ]
   editor:
     backUpBeforeSaving: true
-    fontFamily: "Cantarell"
+    fontFamily: "Consolas"
+    fontSize: 15
     invisibles: {}
     showIndentGuide: true
     softWrap: true
@@ -33,5 +34,11 @@
   minimap:
     absoluteMode: true
     displayCodeHighlights: false
+  "seti-ui":
+    compactView: true
+    disableAnimations: true
   welcome:
     showOnStartup: false
+".diff.source":
+  editor:
+    tabLength: 4

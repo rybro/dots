@@ -23,6 +23,8 @@ var QUOTE_SETTINGS = {
 
 var AVOID_ESCAPE = 'avoid-escape';
 
+var isWarnedForDeprecation = false;
+
 // ------------------------------------------------------------------------------
 // Rule Definition
 // ------------------------------------------------------------------------------
@@ -42,7 +44,18 @@ module.exports = function(context) {
 
   return {
 
+    Program: function() {
+      if (isWarnedForDeprecation || /\=-(f|-format)=/.test(process.argv.join('='))) {
+        return;
+      }
+      /* eslint-disable no-console */
+      console.log('The react/jsx-quotes rule is deprecated. Please use the jsx-quotes rule instead.');
+      /* eslint-enable no-console */
+      isWarnedForDeprecation = true;
+    },
+
     Literal: function(node) {
+
       if (node.parent.type !== 'JSXAttribute') {
         return;
       }
