@@ -25,12 +25,24 @@
 # If you are unfamiliar with CSON, you can read more about it in the
 # Atom Flight Manual:
 # https://atom.io/docs/latest/using-atom-basic-customization#cson
+'atom-workspace atom-text-editor:not([mini])':
+  'ctrl-j': 'unset!'
+ 'atom-workspace atom-text-editor':
+  'ctrl-l': 'unset!'
 'atom-text-editor':
   'ctrl-;': 'editor:move-to-end-of-screen-line'
-  'ctrl-l': 'editor:move-to-end-of-word'
-  'ctrl-j': 'editor:move-to-beginning-of-word'
+  'ctrl-n': 'editor:move-to-end-of-word'
+  'ctrl-m': 'editor:move-to-beginning-of-word'
+  'ctrl-i': 'core:move-up'
+  'ctrl-k': 'core:move-down'
+  'ctrl-l': 'core:move-right'
+  'ctrl-j': 'core:move-left'
+  'ctrl-y': 'editor:select-line'
 '.platform-win32 atom-text-editor, .platform-linux atom-text-editor':
   'ctrl-shift-f': 'find-and-replace:select-all'
 'body':
   'ctrl-i': 'core:move-up'
   'ctrl-k': 'core:move-down'
+  'ctrl-l': 'core:move-right'
+  'ctrl-j': 'core:move-left'
+
