@@ -3,8 +3,7 @@
 xrdb ~/.Xresources & 
 xfce4-panel &
 xbindkeys & 
-uxterm &
-sleep 10 &
+xterm &
 google-chrome-stable &
 discord &
 clementine &
