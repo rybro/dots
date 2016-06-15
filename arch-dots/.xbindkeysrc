@@ -51,7 +51,7 @@
     m:0x8 + c:40
     Alt + d
 
-"uxterm"
+"xterm"
     m:0x8 + c:38
     Alt + a
 
