@@ -34,7 +34,7 @@
 # Uncomment the lines above if you want to pay attention to them.
 
  # program launcher
- "dmenu_run -fn -*-terminus-medium-r-normal-*-14-*-*-*-*-*-*-*"
+"dmenu_run -dim 0.5 -i -x 415 -y 330 -w 450 -h 20 -l 4 -fn 'Terminus' -nb '#201F1D' -nf '#eddec9' -sb '#0f5246' -sf '#eddec9'"
 	m:0x8 + c:39
 
 "amixer set Master toggle"
