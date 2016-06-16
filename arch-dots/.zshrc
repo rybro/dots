@@ -46,7 +46,7 @@ export ZSH=$HOME/.oh-my-zsh
 alias ls="ls -h --color=auto"
 alias la="ls -a"
 alias we="curl --silent http://wttr.in/78602 | head -7"
-alias sz="source ~/.bashrc"
+alias sz="source ~/.zshrc"
 alias gs='git status'
 alias tm='tmux'
 alias bs='browser-sync start --server --files "assets/css/*.css"'
