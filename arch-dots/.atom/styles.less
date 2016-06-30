@@ -19,6 +19,62 @@
 .tree-view {
   // background-color: whitesmoke;
 }
+@tab-height: 24px;
+@line-height: @tab-height;
+
+.tab-bar {
+  height: @tab-height + 1;
+  line-height: @tab-height;
+  border-bottom: 1px solid #333333;
+  padding-left: 1px;
+
+  &:after {
+    display: none;
+  }
+
+  .tab, .tab.active {
+    height: @tab-height;
+    line-height: @line-height;
+    border-left: 0;
+    border-right: 1px solid #333333;
+    margin: 0 1px 0 0;
+    padding: 0 0 0 5px;
+    top:0;
+
+
+    &:first-child {
+      margin-left: 0;
+      padding-left: 5px;
+    }
+
+    &:before, &:after {
+      display: none;
+    }
+
+    .title {
+      line-height: @tab-height;
+
+    }
+
+    .close-icon {
+      top: 1px;
+      line-height: @line-height;
+      height: @line-height;
+      right: 5px;
+    }
+
+    &.modified .close-icon {
+      heigth: 8px;
+      right: 5px;
+      line-height: @line-height;
+    }
+  }
+}
+
+.status-bar {
+  line-height: 18px;
+  height: 20px;
+}
 
 // style the background and foreground colors on the atom-text-editor-element itself
 atom-text-editor {
