@@ -3,10 +3,9 @@ xrdb ~/.Xresources &
 xfce4-panel &
 xbindkeys & 
 xterm &
-google-chrome-stable &
+chromium &
+skype &
 discord &
 clementine &
 nm-applet &
-discord &
 exec startxfce4
-
