@@ -4,7 +4,7 @@ xfce4-panel &
 xbindkeys & 
 xterm &
 chromium &
-skype &
+ghetto-skype &
 discord &
 clementine &
 nm-applet &
