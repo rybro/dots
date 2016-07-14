@@ -55,6 +55,10 @@
     m:0x8 + c:38
     Alt + a
 
+"chromium"
+    m:0x8 + c:25
+    Alt + w
+
 
 ##################################
 # End of xbindkeys configuration #
