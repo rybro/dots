@@ -8,4 +8,5 @@ ghetto-skype &
 discord &
 clementine &
 nm-applet &
+setxkbmap -option altwin:ctrl_win &
 exec startxfce4
