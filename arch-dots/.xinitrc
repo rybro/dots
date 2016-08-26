@@ -4,9 +4,11 @@ xfce4-panel &
 xbindkeys & 
 xterm &
 chromium &
-ghetto-skype &
 discord &
 clementine &
+ghetto-skype &
 nm-applet &
 setxkbmap -option altwin:ctrl_win &
+scudcloud &
 exec startxfce4
+
