@@ -1,3 +1,4 @@
+#!/bin/zsh
 ##########
 # .ZSHRC #
 ##########
@@ -36,7 +37,8 @@ export EDITOR='atom'
 export LANG=en_US.UTF-8
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 export ZSH=$HOME/.oh-my-zsh
-
+export GOPATH=~/go
+export PATH="/home/ryan/anaconda3/bin:$PATH"
 
 
 ###########
@@ -54,6 +56,8 @@ alias c='printf "\033c"'
 alias rb='reboot'
 alias tmp=" sensors | egrep -i --color 'core |temp[1-9]' "
 alias ts='tmux source-file ~/.tmux.conf'
+alias df='df -h'
+alias tmpc='sudo find /tmp -ctime +10 -exec rm -rf {} +'
 function acp() {
     git add -A
     git commit -a -m "$1"
