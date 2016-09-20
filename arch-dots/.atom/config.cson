@@ -13,7 +13,7 @@
     autoHideMenuBar: true
     closeEmptyWindows: false
     disabledPackages: [
-      "linter-jshint"
+      "linter-js-standard"
     ]
     projectHome: "/home/ryan/Projects/"
     themes: [
@@ -25,15 +25,16 @@
     fontFamily: "Consolas"
     fontSize: 15
     invisibles: {}
+    scrollPastEnd: true
     showIndentGuide: true
     softWrap: true
     tabLength: 4
   "exception-reporting":
     userId: "169718cb-2f71-4f60-684d-f4ece219401f"
-  linter: {}
+  linter:
+    showErrorPanel: false
   minimap:
-    absoluteMode: true
-    displayCodeHighlights: false
+    adjustMinimapWidthOnlyIfSmaller: false
   "seti-ui":
     compactView: true
     disableAnimations: true

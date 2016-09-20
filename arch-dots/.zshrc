@@ -32,13 +32,12 @@ setopt correctall
 ###########
 # Exports #
 ###########
-export EDITOR='atom'
+export EDITOR='gvim'
 export LANG=en_US.UTF-8
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 export ZSH=$HOME/.oh-my-zsh
 export GOPATH=~/go
-export PATH="/home/ryan/anaconda3/bin:$PATH"
-
+ 
 
 ###########
 # Aliases #

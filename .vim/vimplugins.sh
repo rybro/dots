@@ -1,0 +1,20 @@
+#!/bin/zsh
+git clone https://github.com/mattn/emmet-vim
+git clone https://github.com/scrooloose/nerdtree
+git clone https://github.com/vim-scripts/ScrollColors
+git clone https://github.com/vim-scripts/SearchComplete
+git clone https://github.com/scrooloose/syntastic
+git clone https://github.com/godlygeek/tabular
+git clone https://github.com/majutsushi/tagbar
+git clone https://github.com/bling/vim-airline
+git clone https://github.com/vim-airline/vim-airline-themes.git
+git clone https://github.com/Lokaltog/vim-easymotion
+git clone https://github.com/tpope/vim-fugitive
+git clone https://github.com/terryma/vim-multiple-cursors
+git clone https://github.com/scrooloose/nerdcommenter.git
+git clone https://github.com/vim-scripts/FuzzyFinder.git
+git clone https://github.com/Shutnik/jshint2.vim.git
+git clone https://github.com/alvan/vim-closetag.git
+git clone https://github.com/tmhedberg/matchit.git
+git clone https://github.com/gorodinskiy/vim-coloresque.git
+git clone https://github.com/drmikehenry/vim-fontsize.git

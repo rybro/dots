@@ -1,1 +1,0 @@
-var search={sangreen:function(){document.addEventListener("keyup",function(a){a.target.value&&"sangreen"===a.target.value.toLowerCase()&&(document.body.style.backgroundImage='url("http://i.imgur.com/SVCxE.gif")')})}};search.sangreen();

@@ -6,7 +6,6 @@ xterm &
 chromium &
 discord &
 clementine &
-ghetto-skype &
 nm-applet &
 setxkbmap -option altwin:ctrl_win &
 scudcloud &

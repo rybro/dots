@@ -162,7 +162,7 @@ URxvt.keysym.Mod4-v: perl:clipboard:paste
 !xterm*faceName: Input\ Mono\ Narrow\ Semi-Condensed:size=12
 !xterm*font: 7x13
 
-xterm*faceName: Input\ Mono:size=12
+xterm*faceName: Input\ Mono:size=11
 xterm*font: 7x13
 
 

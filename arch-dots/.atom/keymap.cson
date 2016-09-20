@@ -45,4 +45,3 @@
   'ctrl-k': 'core:move-down'
   'ctrl-l': 'core:move-right'
   'ctrl-j': 'core:move-left'
-
