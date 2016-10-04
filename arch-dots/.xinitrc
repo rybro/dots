@@ -3,11 +3,10 @@ xrdb ~/.Xresources &
 xfce4-panel &
 xbindkeys & 
 xterm &
-chromium &
+firefox &
 discord &
 clementine &
 nm-applet &
 setxkbmap -option altwin:ctrl_win &
-scudcloud &
 exec startxfce4
 
