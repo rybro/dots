@@ -9,6 +9,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='molokai'
 
 
+
 " Autocomplete HTML
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
@@ -33,9 +34,6 @@ let jshint2_confirm = 0
 
 " NERDTree stuff
 let NERDTreeIgnore = ['\.pyc$', '\.class$', '\.exe$', '\.obj$', '\.gch$', '\.o$']
-map <C-n> :NERDTreeToggle<CR>
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 if has("win32") || has("win64")
     let g:NERDTreeDirArrowExpandable = '>'
@@ -52,7 +50,7 @@ endif
 map <silent> <C-p> :LLPStartPreview<CR>
 
 " Start nerdtree when vim is opened
-autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree
 
 " Turn off automatic comments on new lines for all file formats
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -172,8 +170,9 @@ endif
 "colorscheme mirodark
 colorscheme stereokai
 
+
 " Fonts
-set guifont=Meslo\ LG\ M\ for\ Powerline\ 10
+set guifont=Meslo\ LG\ L\ for\ Powerline\ 10
 
 " ---------------------------------- Mappings ----------------------------------
 
