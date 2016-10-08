@@ -27,6 +27,12 @@ antigen theme candy
 ##########
 setopt autocd
 setopt correctall
+setopt completealiases
+setopt append_history
+setopt share_history
+setopt histverify
+setopt histignorealldups
+setopt noclobber
 
 
 ###########
@@ -39,6 +45,9 @@ export ZSH=$HOME/.oh-my-zsh
 export GOPATH=~/go
 export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 export PATH=`pwd`/depot_tools:"$PATH"
+export HISTFILE="${HOME}"/.zsh-history
+export HISTSIZE=1000000
+export SAVEHIST=$HISTSIZE
 
 
 ###########
@@ -64,6 +73,7 @@ alias df='df -h'
 alias tmpc='sudo find /tmp -ctime +10 -exec rm -rf {} +'
 alias svim='sudoedit'
 alias pacman='sudo pacman'
+function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 function acp() {
     git add -A
     git commit -a -m "$1"
