@@ -4,9 +4,8 @@ xfce4-panel &
 xbindkeys & 
 xterm &
 firefox &
-discord &
+franz-bin &
 clementine &
 nm-applet &
 setxkbmap -option altwin:ctrl_win &
 exec startxfce4
-
