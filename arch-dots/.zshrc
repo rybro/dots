@@ -65,6 +65,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
+alias jclean='journalctl --vacuum-size=50M'
 alias c='printf "\033c"'
 alias rb='reboot'
 alias tmp=" sensors | egrep -i --color 'core |temp[1-9]' "
@@ -72,7 +73,10 @@ alias ts='tmux source-file ~/.tmux.conf'
 alias df='df -h'
 alias tmpc='sudo find /tmp -ctime +10 -exec rm -rf {} +'
 alias svim='sudoedit'
-alias pacman='sudo pacman'
+alias pacman='sudo pacman -S '
+alias yaourt='yaourt -s '
+alias lint='sudo rmlint'
+alias rss='newsbeuter -r'
 alias psize="pacman -Qi | egrep '^(Name|Installed)' | cut -f2 -d':' | tr '\nK' ' \n' | sort -nrk 2 | less"
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 function acp() {
