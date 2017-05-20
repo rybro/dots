@@ -47,7 +47,7 @@ export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 export PATH=`pwd`/depot_tools:"$PATH"
 export HISTFILE="${HOME}"/.zsh-history
 export HISTSIZE=1000000
-export SAVEHIST=$HISTSIZE
+export SAVEHIST=111111
 
 
 ###########
@@ -73,6 +73,7 @@ alias df='df -h'
 alias tmpc='sudo find /tmp -ctime +10 -exec rm -rf {} +'
 alias svim='sudoedit'
 alias pacman='sudo pacman'
+alias psize="pacman -Qi | egrep '^(Name|Installed)' | cut -f2 -d':' | tr '\nK' ' \n' | sort -nrk 2 | less"
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 function acp() {
     git add -A
@@ -80,10 +81,11 @@ function acp() {
     git push -u origin master
 }
 function res() {
- 	xrandr --newmode "1920x1080_60.00" 173.00 1920 2048 2248 2576 1080 1083 1088 1120 -hsync +vsync  
- 	xrandr --addmode VGA1 1920x1080_60.00
- 	xrandr --output VGA1 --mode 1920x1080_60.00  
+    xrandr --newmode "1920x1080-60.00" 173.00 1920 2048 2248 2576 1080 1083 1088 1120 -hsync +vsync  
+    xrandr --addmode VGA1 1920x1080-60.00
+    xrandr --output VGA1 --mode 1920x1080-60.00 
 }
+
 function extract() {
      if [ -f $1 ] ; then
          case $1 in
