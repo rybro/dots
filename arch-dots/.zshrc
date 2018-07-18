@@ -53,10 +53,11 @@ export SAVEHIST=111111
 ###########
 # Aliases #
 ###########
-alias ls="ls -h --color=auto"
+alias ls="ls -haltr --color=auto"
 alias la="ls -a"
-alias we="curl --silent http://wttr.in/78602 | head -7"
+alias we="curl --silent http://wttr.in/77479 | head -7"
 alias sz="source ~/.zshrc"
+alias sx="source ~/.xinitrc"
 alias gs='git status'
 alias tm='tmux'
 alias bs='browser-sync start --server --files "assets/css/*.css"'
@@ -73,11 +74,16 @@ alias ts='tmux source-file ~/.tmux.conf'
 alias df='df -h'
 alias tmpc='sudo find /tmp -ctime +10 -exec rm -rf {} +'
 alias svim='sudoedit'
-alias pacman='sudo pacman -S '
-alias yaourt='yaourt -s '
 alias lint='sudo rmlint'
-alias rss='newsbeuter -r'
+alias rss='newsboat -r'
+alias yt='youtube-dl '
 alias psize="pacman -Qi | egrep '^(Name|Installed)' | cut -f2 -d':' | tr '\nK' ' \n' | sort -nrk 2 | less"
+function st () {
+    streamlink -p mpv http://twitch.tv/$1 $2
+}
+function ytm () {
+    youtube-dl --output "%(title)s.%(ext)s" --extract-audio --audio-format mp3 --audio-quality 0 $1
+}
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 function acp() {
     git add -A
@@ -134,3 +140,7 @@ function extract() {
         echo "'$1' is not a valid file"
     fi
 }
+
+
+export NVM_DIR="/home/ryan/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
